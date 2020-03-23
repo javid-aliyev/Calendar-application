@@ -2,6 +2,7 @@ import calendar
 import datetime
 import os
 import colorama
+import time
 
 # ! ============================ DECORATORS ===========
 def green_wrapper(fn):
@@ -62,7 +63,7 @@ def __print_invalid_month_error():
 # ! ============================ PRINT FUNCTIONS (commands) ===========
 @blue_wrapper
 def __print_now():
-	print(datetime.datetime.now())
+	print(f"{datetime.datetime.now()} UTC{__get_utc()}")
 
 @green_wrapper
 def __print_curr_year():
@@ -98,6 +99,9 @@ def __print_curr_day():
 	print(result)
 
 # ! ============================ SECONDARY FUNCTIONS (logic) ===========
+def __get_utc():
+	return time.localtime().tm_zone
+
 def __get_user_input(text):
 	"""Gets user input and catchs KeyboardInterrupt"""
 	try:
