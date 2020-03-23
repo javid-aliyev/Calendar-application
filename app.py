@@ -25,7 +25,7 @@ def red_wrapper(fn):
 		print(colorama.Style.RESET_ALL)
 	return wrapper
 
-# ! ============================ PRINT FUNCTIONS (commands) ===========
+# ! ============================ ERRORS ===========
 @red_wrapper
 def __print_invalid_input_error():
 	print("Invalid command")
@@ -34,18 +34,32 @@ def __print_invalid_input_error():
 def __print_invalid_year_error():
 	print("Invalid year")
 
+@red_wrapper
+def __print_invalid_month_error():
+	print("Invalid month")
+
+# ! ============================ PRINT FUNCTIONS (commands) ===========
 @green_wrapper
 def __print_now():
 	print(datetime.datetime.now())
+
+@green_wrapper
+def __print_curr_year():
+	cal.pryear(datetime.datetime.now().year)
+
+@green_wrapper
+def __print_curr_month():
+	now = datetime.datetime.now()
+	cal.prmonth(now.year, now.month)
 
 def __print_year():
 	try:
 		year = int(__get_user_input("The year you want to see: "))
 		print(colorama.Fore.GREEN)
 		cal.pryear(year)
+		print(colorama.Style.RESET_ALL)
 	except ValueError:
 		__print_invalid_year_error()
-	print(colorama.Style.RESET_ALL)
 
 # ! ============================ SECONDARY FUNCTIONS (logic) ===========
 def __get_user_input(text):
@@ -63,6 +77,10 @@ def __exec_command(inp):
 		__print_now()
 	elif inp == "year":
 		__print_year()
+	elif inp == "curryear":
+		__print_curr_year()
+	elif inp == "currmonth":
+		__print_curr_month()
 	elif inp == "exit":
 		exit()
 	elif inp == "clear":
