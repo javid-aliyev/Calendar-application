@@ -1,0 +1,8 @@
+{
+	"author": "Javid Aliyev",
+	"pl": "Python 3.6.9",
+	"system": "Ubuntu 18.04.4 LTS x64",
+	"dependencies": {
+		"colorama": "0.4.3"
+	}
+}
