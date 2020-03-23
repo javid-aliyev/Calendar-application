@@ -30,9 +30,22 @@ def red_wrapper(fn):
 def __print_invalid_input_error():
 	print("Invalid command")
 
+@red_wrapper
+def __print_invalid_year_error():
+	print("Invalid year")
+
 @green_wrapper
 def __print_now():
 	print(datetime.datetime.now())
+
+def __print_year():
+	try:
+		year = int(__get_user_input("The year you want to see: "))
+		print(colorama.Fore.GREEN)
+		cal.pryear(year)
+	except ValueError:
+		__print_invalid_year_error()
+	print(colorama.Style.RESET_ALL)
 
 # ! ============================ SECONDARY FUNCTIONS (logic) ===========
 def __get_user_input(text):
@@ -48,6 +61,8 @@ def __exec_command(inp):
 	"""Checks for any command calling"""
 	if inp == "now":
 		__print_now()
+	elif inp == "year":
+		__print_year()
 	elif inp == "exit":
 		exit()
 	elif inp == "clear":
@@ -62,6 +77,8 @@ def __clear_terminal():
 
 # ! ============================ MAIN FUNCTION (program entry point) ===========
 def main():
+	global cal
+	cal = calendar.TextCalendar()
 	colorama.init()
 	while True:
 		user_input = __get_user_input("$ ")
