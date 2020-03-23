@@ -5,10 +5,11 @@ Info in config.json
 # Documentation
 ## Commands:
 * now
+* day
 * year
 * curryear
-* month
 * currmonth
+* help
 * clear
 * exit
 
