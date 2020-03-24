@@ -103,6 +103,19 @@ def __print_curr_day():
 	result += f". {now.day} {calendar.month_name[now.month]}"
 	print(result)
 
+def __print_time_to():
+	pass
+
+def __print_time_for():
+	__print_curr_day()
+	__print_now()
+	try:
+		daysfor = int(__get_user_input("Days: "))
+		now = datetime.datetime.now()
+		print(now + datetime.timedelta(days=daysfor))
+	except ValueError:
+		return
+
 # ! ============================ SECONDARY FUNCTIONS (logic) ===========
 # ! =======================================
 def __get_utc():
@@ -129,6 +142,10 @@ def __exec_command(inp):
 		__print_curr_month()
 	elif inp == "day":
 		__print_curr_day()
+	elif inp == "timeto":
+		__print_time_to()
+	elif inp == "timefor":
+		__print_time_for()
 	elif inp == "help":
 		__help()
 	elif inp == "exit":

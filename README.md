@@ -9,6 +9,8 @@ Info in config.json
 * year
 * curryear
 * currmonth
+* [timeto]
+* [timefor]
 * help
 * clear
 * exit
