@@ -6,6 +6,7 @@ import colorama
 import time
 
 # ! ============================ DECORATORS ===========
+# ! =======================================
 def green_wrapper(fn):
 	def wrapper():
 		print(colorama.Fore.GREEN)
@@ -35,6 +36,7 @@ def cyan_wrapper(fn):
 	return wrapper
 
 # ! ============================ HELP ===========
+# ! =======================================
 @cyan_wrapper
 def __help():
 	commands = ["now",
@@ -49,6 +51,7 @@ def __help():
 		print(f"{num}. {command}")
 
 # ! ============================ ERRORS ===========
+# ! =======================================
 @red_wrapper
 def __print_invalid_input_error():
 	print("Invalid command")
@@ -62,6 +65,7 @@ def __print_invalid_month_error():
 	print("Invalid month")
 
 # ! ============================ PRINT FUNCTIONS (commands) ===========
+# ! =======================================
 @blue_wrapper
 def __print_now():
 	print(f"{datetime.datetime.now()} UTC{__get_utc()}")
@@ -100,6 +104,7 @@ def __print_curr_day():
 	print(result)
 
 # ! ============================ SECONDARY FUNCTIONS (logic) ===========
+# ! =======================================
 def __get_utc():
 	return time.localtime().tm_zone
 
@@ -139,6 +144,7 @@ def __clear_terminal():
 	os.system("clear")
 
 # ! ============================ MAIN FUNCTION (program entry point) ===========
+# ! =======================================
 def main():
 	global cal
 	cal = calendar.TextCalendar()
