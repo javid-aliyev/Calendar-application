@@ -104,15 +104,21 @@ def __print_curr_day():
 	print(result)
 
 def __print_time_to():
-	pass
+	date = __get_user_input("Date: ")
+	print(colorama.Fore.BLUE)
+	now = datetime.datetime.now()
+	print(now, datetime.datetime.strptime(date, "%Y-%m-%d") - now, sep="\n")
+	print(colorama.Style.RESET_ALL)
 
 def __print_time_for():
 	__print_curr_day()
 	__print_now()
 	try:
 		daysfor = int(__get_user_input("Days: "))
+		print(colorama.Fore.BLUE)
 		now = datetime.datetime.now()
 		print(now + datetime.timedelta(days=daysfor))
+		print(colorama.Style.RESET_ALL)
 	except ValueError:
 		return
 
