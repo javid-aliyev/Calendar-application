@@ -107,8 +107,12 @@ def __print_time_to():
 	date = __get_user_input("Date: ")
 	print(colorama.Fore.BLUE)
 	now = datetime.datetime.now()
-	print(now, datetime.datetime.strptime(date, "%Y-%m-%d") - now, sep="\n")
-	print(colorama.Style.RESET_ALL)
+	try:
+		print(now, datetime.datetime.strptime(date, "%Y-%m-%d") - now, sep="\n")
+	except ValueError:
+		return
+	finally:
+		print(colorama.Style.RESET_ALL)
 
 def __print_time_for():
 	__print_curr_day()
@@ -175,7 +179,6 @@ def main():
 	while True:
 		user_input = __get_user_input("$ ")
 		__exec_command(user_input)
-
 
 if __name__ == "__main__":
 	main()
