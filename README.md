@@ -3,15 +3,14 @@ This is calendar application written in python.
 Info in config.json
 
 # Documentation
-yyyy-mm-dd timeto
+__yyyy-mm-dd timeto__
 ## Commands:
 * now
-* day
 * year
 * curryear
 * currmonth
-* [timeto]
-* [timefor]
+* timeto
+* timefor
 * help
 * clear
 * exit
