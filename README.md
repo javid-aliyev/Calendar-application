@@ -6,6 +6,7 @@ Info in config.json
 __yyyy-mm-dd timeto__
 ## Commands:
 * now
+* day
 * year
 * curryear
 * currmonth
