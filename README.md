@@ -3,7 +3,6 @@ This is calendar application written in python.
 Info in config.json
 
 # Documentation
-__yyyy-mm-dd timeto__
 ## Commands:
 * now
 * day
