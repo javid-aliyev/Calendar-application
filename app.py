@@ -44,6 +44,8 @@ def __help():
 				"year",
 				"curryear",
 				"currmonth",
+				"timeto",
+				"timefor",
 				"help",
 				"clear",
 				"exit"]
